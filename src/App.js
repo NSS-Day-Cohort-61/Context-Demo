@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import UserContainer from './components/UserContainer'
 
-function App() {
+const users = [
+  { id: 1, name: 'Alice', email: 'alice@example.com', phone: '555-1111' },
+  { id: 2, name: 'Bob', email: 'bob@example.com', phone: '555-2222' },
+  { id: 3, name: 'Charlie', email: 'charlie@example.com', phone: '555-3333' },
+]
+
+const App = () => {
+  const [selectedUser, setSelectedUser] = useState(null)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UserContainer users={users} selectedUser={selectedUser} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
