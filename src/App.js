@@ -12,7 +12,11 @@ const App = () => {
 
   return (
     <div>
-      <UserContainer users={users} selectedUser={selectedUser} />
+      <UserContainer
+        users={users}
+        selectedUser={selectedUser}
+        onUserClick={setSelectedUser}
+      />
     </div>
   )
 }

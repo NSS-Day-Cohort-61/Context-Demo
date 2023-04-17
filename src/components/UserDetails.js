@@ -1,13 +1,16 @@
 import React from 'react'
+import { Card, CardBody, CardTitle } from 'reactstrap'
 
 const UserDetails = ({ user }) => {
   return (
-    <div>
-      <h2>User Details</h2>
-      <p>Name: {user.name}</p>
-      <p>Email: {user.email}</p>
-      <p>Phone: {user.phone}</p>
-    </div>
+    <Card>
+      <CardBody>
+        <CardTitle tag="h2">User Details</CardTitle>
+        <p>Name: {user.name}</p>
+        <p>Email: {user.email}</p>
+        <p>Phone: {user.phone}</p>
+      </CardBody>
+    </Card>
   )
 }
 

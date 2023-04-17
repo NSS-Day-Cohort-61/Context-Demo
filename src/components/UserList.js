@@ -1,17 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { ListGroup, ListGroupItem } from 'reactstrap'
 
-const UserList = ({ users }) => {
+const UserList = ({ users, onUserClick }) => {
   return (
     <div>
       <h2>User List</h2>
-      <ul>
+      <ListGroup>
         {users.map((user) => (
-          <li key={user.id}>
-            <Link to={`/user/${user.id}`}>{user.name}</Link>
-          </li>
+          <ListGroupItem
+            key={user.id}
+            onClick={() => onUserClick(user)}
+            tag="button"
+            action
+          >
+            {user.name}
+          </ListGroupItem>
         ))}
-      </ul>
+      </ListGroup>
     </div>
   )
 }
