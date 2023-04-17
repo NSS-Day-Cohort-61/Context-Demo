@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import UserContext from '../UserContext'
 import UserList from './UserList'
 import UserDetails from './UserDetails'
 import { Container, Row, Col } from 'reactstrap'
 
-const UserContainer = ({ users, selectedUser, onUserClick }) => {
+const UserContainer = () => {
+  const { selectedUser } = useContext(UserContext)
+
   return (
-    <Container>
+    <Container style={{ 'margit-top': '3rem' }}>
       <Row>
         <Col md="4">
-          <UserList users={users} onUserClick={onUserClick} />
+          <UserList />
         </Col>
-        <Col md="8">{selectedUser && <UserDetails user={selectedUser} />}</Col>
+        <Col md="8">{selectedUser && <UserDetails />}</Col>
       </Row>
     </Container>
   )

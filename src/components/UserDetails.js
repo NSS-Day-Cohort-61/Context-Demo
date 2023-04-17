@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import UserContext from '../UserContext'
 import { Card, CardBody, CardTitle } from 'reactstrap'
 
-const UserDetails = ({ user }) => {
+const UserDetails = () => {
+  const { selectedUser } = useContext(UserContext)
+
   return (
     <Card>
       <CardBody>
         <CardTitle tag="h2">User Details</CardTitle>
-        <p>Name: {user.name}</p>
-        <p>Email: {user.email}</p>
-        <p>Phone: {user.phone}</p>
+        <p>Name: {selectedUser.name}</p>
+        <p>Email: {selectedUser.email}</p>
+        <p>Phone: {selectedUser.phone}</p>
       </CardBody>
     </Card>
   )

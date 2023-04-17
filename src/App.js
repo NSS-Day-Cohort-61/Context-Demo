@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import UserContext from './UserContext'
 import UserContainer from './components/UserContainer'
 
 const users = [
@@ -11,13 +12,9 @@ const App = () => {
   const [selectedUser, setSelectedUser] = useState(null)
 
   return (
-    <div>
-      <UserContainer
-        users={users}
-        selectedUser={selectedUser}
-        onUserClick={setSelectedUser}
-      />
-    </div>
+    <UserContext.Provider value={{ users, selectedUser, setSelectedUser }}>
+      <UserContainer />
+    </UserContext.Provider>
   )
 }
 

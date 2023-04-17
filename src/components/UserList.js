@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import UserContext from '../UserContext'
 import { ListGroup, ListGroupItem } from 'reactstrap'
 
-const UserList = ({ users, onUserClick }) => {
+const UserList = () => {
+  const { users, setSelectedUser } = useContext(UserContext)
+
   return (
     <div>
       <h2>User List</h2>
@@ -9,7 +12,7 @@ const UserList = ({ users, onUserClick }) => {
         {users.map((user) => (
           <ListGroupItem
             key={user.id}
-            onClick={() => onUserClick(user)}
+            onClick={() => setSelectedUser(user)}
             tag="button"
             action
           >
