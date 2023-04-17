@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'reactstrap'
 
 const UserContainer = ({ users, selectedUser, onUserClick }) => {
   return (
-    <Container style={{ 'margin-top': '3rem' }}>
+    <Container style={{ marginTop: '3rem' }}>
       <Row>
         <Col md="4">
           <UserList users={users} onUserClick={onUserClick} />
