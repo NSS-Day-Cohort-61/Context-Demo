@@ -8,7 +8,7 @@ const UserContainer = () => {
   const { selectedUser } = useContext(UserContext)
 
   return (
-    <Container style={{ 'margit-top': '3rem' }}>
+    <Container style={{ marginTop: '3rem' }}>
       <Row>
         <Col md="4">
           <UserList />
